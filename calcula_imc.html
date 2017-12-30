@@ -1,35 +1,39 @@
 <script>
-var peso = 90;
-var altura = 1.60;
-var imc = peso /(altura*altura); 
+//var peso = 90;
+//var altura = 1.60;
+//var imc = peso /(altura*altura); 
 var pulaLinha = function(){
-    document.write("<br>");
+   document.write("<br>");
 }
 var mostra = function(frase){
     document.write(frase);
     pulaLinha();
 }
-mostra("meu IMC é: "+imc.toFixed(2));
-
-var pesoDoPrimo = 83;
-var alturaDoPrimo = 1.76;
-
 
 var calculaIMC = function(altura, peso){
     var imc = peso/(altura*altura);
    return imc;
 }
-var pesoDoPrimo = 83;
-var alturaDoPrimo = 1.76;
-var imcDoPrimo = Math.round((alturaDoPrimo, pesoDoPrimo));
-mostra("O imc do meu primo é " + imcDoPrimo);
-mostra("Ele ainda está " + (imcDoPrimo - 18.5) + " pontos acima do limite da magreza.");
-mostra("Ele está " + (imcDoPrimo - 35) + "está acima");
+
 var nomeUsuario = prompt("Olá, qual o seu nome?");
 var alturaDoUsuario = prompt("Ola" + nomeUsuario+"! Qual é a sua altura?");
 var pesoDoUsuario = prompt("E o seu peso?");
 
 var imcDoUsuario = calculaIMC(alturaDoUsuario, pesoDoUsuario);
-    mostra("O seu imc é "+ imcDoUsuario);
+    mostra("O seu imc é "+ imcDoUsuario.toFixed(2));
+
+    if(imcDoUsuario < 18.5){
+        mostra("Seu IMC indica que você está ABAIXO do peso.");
+
+    }
+    if (imcDoUsuario > 35){
+        mostra("Seu IMC indica que você está ACIMA do peso.")
+    }
+    if (imcDoUsuario >= 18 && imcDoUsuario <= 35){
+        
+        mostra("Ok! Seu IMC está entre os dois limites!");
+
+    }
+
     
 </script>
