@@ -1,0 +1,39 @@
+<script>
+    var calculaPontos = function (vitorias, empates) {
+        var pontos = (vitorias * 3) + empates;
+        return pontos;
+    }
+
+    var pulaLinha = function () {
+        document.write("<br>");
+    }
+    var mostra = function (frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    var nomeTimeOne = prompt("Nome do primeiro Time");
+    var nomeTimeTwo = prompt("Nome do segundo Time");
+    var vitorias = prompt("Quantos jogos o "+nomeTimeOne+" venceu?");
+    var empates = prompt("Quantos jogos o "+nomeTimeOne+ " empatou?");
+    var vitoriasAdversarios = prompt("Quantos jogos o "+nomeTimeTwo+" venceu?");
+    var empateAdversarios = prompt("Quantos jogos o "+ nomeTimeTwo +" empatou?");
+
+  
+    var jogoFutOne = calculaPontos(vitorias, parseInt(empates));
+    var jogoFutTwo = calculaPontos(vitoriasAdversarios,parseInt(empateAdversarios));
+    
+    mostra("O time: "+nomeTimeOne+" fez "+jogoFutOne+" pontos");
+    mostra("O time: "+nomeTimeTwo+" fez "+jogoFutTwo+" pontos");
+
+    if (jogoFutOne > jogoFutTwo) { //se maior
+        mostra("O time " +nomeTimeOne + " está indo MELHOR que o " +nomeTimeTwo)
+    }
+    if (jogoFutOne < jogoFutTwo) { //menor
+        mostra("O time " +nomeTimeOne +" está indo PIOR que o "  +nomeTimeTwo);
+    }
+    if (jogoFutOne == jogoFutTwo) {
+        mostra("O time " +nomeTimeOne +" EMPATADO com o " + nomeTimeTwo)
+    }
+
+  
+</script>
